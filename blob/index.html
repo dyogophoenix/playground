@@ -2,20 +2,91 @@
 <html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
-	<title>Blob IMG</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Blob IMG by Dyogo Phoenix</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Signika:300,400,600" rel="stylesheet" />
+	<link href="./css/estilo.min.css" rel="stylesheet">
 </head>
 <body>
 
-<figure class="thumb">
-	<img src="https://www.artmajeur.com/img/ajax-loader.gif" data-blob="https://loremflickr.com/640/480/brazil,nature/all?random=1" alt="" />
-</figure>
+<main>
+
+	<header>
+		<div class="center">
+			<div class="header">
+				<h2>Criando imagens com Blob</h2>
+
+				<div class="caption">
+					As imagens exibidas abaixo são carregadas após o " load " da página e suas urls são retornadas em " blob ".
+					<span class="small">(em alguns navegadores essas urls são revogadas impedindo o salvamento)</span>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section id="conteudo">	
+
+		<div class="row clearfix">
+			
+			<div class="coluna">
+				<div class="type success">SUCCESS<span>data-blob</span></div>
+				<article class="card clearfix">
+					<div class="h-card">
+						<img src="./img/ring.svg" data-blob="./img/photo.gif" data-erro="./img/erro.png" alt="" />
+						<div class="figcaption"></div>
+					</div>
+					<div class="b-card">
+						<h3>Lorem ipsum dolor sit amet.</h3>
+						<div class="caption">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus maiores, repellendus blanditiis atque nihil eius, omnis laboriosam natus in non eos odit ipsam aspernatur deserunt?
+						</div>
+					</div>
+					<div class="f-card">
+						<a href="javascript:void(0);">READ MORE</a>
+					</div>
+				</article>
+			</div>
+
+			<div class="coluna">
+				<div class="type error">ERROR<span>data-erro</span></div>
+				<article class="card clearfix">
+					<div class="h-card">
+						<img src="./img/ring.svg" data-blob="./img/photo1.gif" data-erro="./img/erro.png" alt="" />
+						<div class="figcaption"></div>
+					</div>
+					<div class="b-card">
+						<h3>Lorem ipsum dolor sit.</h3>
+						<div class="caption">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis laudantium error necessitatibus repellendus dicta sit earum non praesentium eveniet molestiae et quis, aliquam suscipit quod quaerat debitis tempore nostrum totam alias dolores. Officia porro excepturi corporis sunt odit voluptas dolor?
+						</div>
+					</div>
+					<div class="f-card">
+						<a href="javascript:void(0);">READ MORE</a>
+					</div>
+				</article>
+			</div>
+
+		</div>
+
+		<div class="codigo clearfix">
+			<pre><code>&lt;img src="LOAD_IMG" data-blob="SUA_IMG" data-erro="ERRO_IMG" alt="" /&gt;</code></pre>
+		</div>
+
+	</section>
+
+</main>
 	
-<script src="./script.js"></script>
+<script src="./js/script.min.js"></script>
 <script>
-(function() {
-	new Blob({
-		container: 'img[data-blob]',
-		atributo: 'data-blob'
+(function() {	
+	window.addEventListener('load', function() {
+		new Blob({
+			container: 'img[data-blob]',
+			atributo: 'data-blob',
+			erro: 'data-erro'
+		});
 	});
 })();
 </script>
