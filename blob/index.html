@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Blob IMG</title>
+</head>
+<body>
+
+<figure class="thumb">
+	<img src="https://www.artmajeur.com/img/ajax-loader.gif" data-blob="https://loremflickr.com/640/480/brazil,nature/all?random=1" alt="" />
+</figure>
+	
+<script src="./script.js"></script>
+<script>
+(function() {
+	new Blob({
+		container: 'img[data-blob]',
+		atributo: 'data-blob'
+	});
+})();
+</script>
+</body>
+</html>
