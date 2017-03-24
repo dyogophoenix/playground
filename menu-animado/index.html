@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Menu Animado - VueJS - by Dyogo Phoenix</title>
+
+	<link href="http://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet" />
+	<link rel="stylesheet" href="./item/estilo.min.css" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	
+	<nav class="navbar-custom">
+		<ul class="nav-menu" v-on:mouseleave="eHover()">
+			<li v-for="(botao, index) in Botoes" class="nav-item" v-bind:class="{ active: botao.Ativo }" v-bind:index="index">
+				<a v-bind:href="botao.Link ? botao.Link : 'javascript:void(0)'" class="nav-link" v-on:mouseover="eHover(botao,index)" v-on:click="eClick(botao, index)">{{ botao.Nome }}</a>
+			</li>
+			<li class="linha"></li>
+		</ul>
+	</nav>
+	<main>
+		<section id="exemplo">
+			<h2>Menu animado - VueJS</h2>
+			<div class="caption">
+				Menu animado que crie aprendendo a usar o <a href="//vuejs.org/" target="_blank">VueJS</a> !
+			</div>
+		</section>
+	</main>
+
+<script defer src="./item/custom.min.js"></script>
+</body>
+</html>
